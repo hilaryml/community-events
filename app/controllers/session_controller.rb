@@ -9,5 +9,9 @@ class SessionController < Sinatra::Base
       set :session_secret, "community-events"
       use Rack::Flash
   end
-  
+
+  get '/' do
+    erb :index
+  end
+
 end
