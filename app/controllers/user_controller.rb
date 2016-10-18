@@ -1,7 +1,11 @@
 class UserController < SessionController
 
   get "/signup" do
-    erb :"/users/signup"
+    if !logged_in?
+      erb :"/users/signup"
+    else
+      redirect "/"
+    end
   end
 
   post "/signup" do
@@ -14,11 +18,22 @@ class UserController < SessionController
   end
 
   get "/login" do
-    erb :"users/login"
+    if !logged_in?
+      erb :"users/login"
+    else
+      redirect "/"
+    end
   end
 
   post "/login" do
-    
+    @user = User.find_by(email: params[:email])
+    login(params[:username], params[:password])
+    redirect "/"
+  end
+
+  get "/logout" do
+    logout
+    redirect "/login"
   end
 
 end
