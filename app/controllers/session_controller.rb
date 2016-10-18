@@ -15,4 +15,30 @@ class SessionController < Sinatra::Base
     erb :index  #general event feed
   end
 
+  helpers do
+
+    def logged_in?
+      !!current_user
+    end
+
+    def current_user
+      current_user ||= User.find_by(email: session[:email]) if session[:email]
+    end
+
+    def login(username, password)
+      @user = User.find_by(username)
+      if @user && @user.authenticate(password)
+        session[:email] = @user.email
+        redirect "/index"
+      else
+        redirect "/login"
+      end
+    end
+
+    def logout
+      session.clear
+    end
+
+  end
+
 end
