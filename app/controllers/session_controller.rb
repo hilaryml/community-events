@@ -11,7 +11,7 @@ class SessionController < Sinatra::Base
   end
 
   get '/' do
-    @events = Events.all
+    @events = Event.all
     erb :index  #general event feed
   end
 

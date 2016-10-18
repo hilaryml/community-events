@@ -1,2 +1,2 @@
-class EventController < Sinatra::Base
+class EventController < SessionController
 end
