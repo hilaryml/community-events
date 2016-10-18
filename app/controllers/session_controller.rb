@@ -30,7 +30,7 @@ class SessionController < Sinatra::Base
       @user = User.find_by(username: username)
       if @user && @user.authenticate(password)
         session[:email] = @user.email
-        redirect "/index"
+        redirect "/"
       else
         redirect "/login"
       end

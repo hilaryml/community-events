@@ -1,0 +1,5 @@
+<% @events.each {|event| %>
+  <a href="/events/<%=event.id%>"><%=event.title%></a>
+  <p><%=event.date%> at <%=event.time%><p>
+    <br></br>
+<% } %>

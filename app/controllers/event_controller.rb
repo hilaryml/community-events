@@ -1,6 +1,6 @@
 class EventController < SessionController
 
-  get "/events" do #shows a single user's events index
+  get "/events" do 
     if !logged_in?
       redirect "/login"
     else
