@@ -1,7 +1,8 @@
 <a href="/logout">Logout</a> <a href="/">Home</a> <a href="/events/new">New Event</a>
+<br></br>
 <% @events.each {|event| %>
   <a href="/events/<%=event.id%>"><%=event.title%></a>
-  <p><%=event.datetime%></p>
+  <p><%=event.date%></p>
   <form method="post" action="/events/<%=event.id%>">
     <input id="hidden" type="hidden" name="_method" value="patch">
     <input type="submit" value="Edit">
