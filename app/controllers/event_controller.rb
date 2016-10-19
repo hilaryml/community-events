@@ -1,6 +1,6 @@
 class EventController < SessionController
 
-  get "/events" do 
+  get "/events" do
     if !logged_in?
       redirect "/login"
     else
@@ -34,6 +34,20 @@ class EventController < SessionController
     else
       @event = Event.find(params[:id])
       erb :"events/show"
+    end
+  end
+
+  get "/events/:id/edit" do
+    if !logged_in?
+      redirect "/login"
+    else
+      @event = Event.find(params[:id])
+      if @event.user = current_user
+        @user = current_user
+        erb :"events/edit"
+      else
+        redirect "/events"
+      end
     end
   end
 
