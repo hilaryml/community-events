@@ -1,6 +1,6 @@
 # Community Events
 
-Community Events is a Sinatra app used for displaying upcoming events in various communities. Users are able to signup, login and post events to their communities' feed where the general public can view them.
+Community Events is a Sinatra app used for displaying upcoming events in the Hamilton Community. Users are able to signup, login and post events to the community feed where the general public can view them.
 
 ## Installation
 
