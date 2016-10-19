@@ -1,4 +1,6 @@
-<a href="<%=@link%>"><%=@linkname%></a>
+<% @links.each {|key, value| %>
+  <a href="<%=value%>"><%=key%></a> 
+<% } %>
 <% @events.each {|event| %>
   <h3><%=event.title%><h3>
   <p><%=event.date%> at <%=event.time%><p>

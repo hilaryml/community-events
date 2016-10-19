@@ -13,11 +13,9 @@ class SessionController < Sinatra::Base
   get '/' do
     #if logged in, dont show login or signup links, show logout link instead... can I put this in the layout instead?
     if logged_in?
-      @linkname = "Logout"
-      @link = "/logout"
+      @links = {"Logout": "/logout", "Your Events": "/events", "New Event": "/events/new"}
     else
-      @linkname = "Login"
-      @link = "/login"
+      @links = {"Login": "/login", "Signup": "/signup"}
     end
     @events = Event.all
     erb :index  #general event feed

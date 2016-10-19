@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 3) do
 
   create_table "events", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "date"
-    t.time     "time"
-    t.text     "description"
-    t.string   "contact"
-    t.string   "user_id"
-    t.string   "location"
+    t.string "title"
+    t.date   "date"
+    t.time   "time"
+    t.text   "description"
+    t.string "contact"
+    t.string "user_id"
+    t.string "location"
   end
 
   create_table "users", force: :cascade do |t|
