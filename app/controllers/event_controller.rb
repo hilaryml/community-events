@@ -51,4 +51,14 @@ class EventController < SessionController
     end
   end
 
+  patch "/events/:id" do
+    @event = Event.find(params[:id])
+    @event.update(params)
+    if @event.save
+      redirect "/events/#{@event.id}"
+    else
+      redirect "/events/#{@event.id}/edit"
+    end
+  end
+
 end
