@@ -53,7 +53,7 @@ class EventController < SessionController
 
   patch "/events/:id" do
     @event = Event.find(params[:id])
-    @event.update(params)
+    @event.update(title: params[:title], date: params[:date], time: params[:time], location: params[:location], description: params[:description], contact: params[:contact])
     if @event.save
       redirect "/events/#{@event.id}"
     else
