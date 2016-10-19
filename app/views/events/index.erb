@@ -1,3 +1,4 @@
+<a href="/logout">Logout</a> <a href="/">Home</a> <a href="/events/new">New Event</a>
 <% @events.each {|event| %>
   <a href="/events/<%=event.id%>"><%=event.title%></a>
   <p><%=event.date%> at <%=event.time%><p>
