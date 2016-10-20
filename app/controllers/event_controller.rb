@@ -1,15 +1,5 @@
 class EventController < SessionController
 
-  get "/events" do
-    if !logged_in?
-      redirect "/login"
-    else
-      @user = current_user
-      @events = @user.events
-      erb :"/events/index"
-    end
-  end
-
   get "/events/new" do
     if !logged_in?
       redirect "/login"
@@ -25,6 +15,16 @@ class EventController < SessionController
       redirect "/events/#{@event.id}"
     else
       redirect "/events/new"
+    end
+  end
+
+  get "/events" do
+    if !logged_in?
+      redirect "/login"
+    else
+      @user = current_user
+      @events = @user.events
+      erb :"/events/index"
     end
   end
 
@@ -46,7 +46,7 @@ class EventController < SessionController
         @user = current_user
         erb :"events/edit"
       else
-        flash[:message] = "Users can only edit their own events."
+        flash[:notice] = "Users can only edit their own events."
         redirect "/events"
       end
     end
@@ -62,7 +62,7 @@ class EventController < SessionController
     end
   end
 
-  delete "/events/:id" do
+  delete "/events/:id/delete" do
     if !logged_in?
       redirect "/login"
     else

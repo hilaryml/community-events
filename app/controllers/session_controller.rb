@@ -4,10 +4,10 @@ require 'rack-flash'
 class SessionController < Sinatra::Base
 
   configure do
-      set :views, 'app/views'
       enable :sessions
-      set :session_secret, "community-events"
       use Rack::Flash
+      set :session_secret, "community-events"
+      set :views, 'app/views'
   end
 
   get '/' do
@@ -17,7 +17,7 @@ class SessionController < Sinatra::Base
       @links = {"Login": "/login", "Signup": "/signup"}
     end
     @events = Event.all
-    erb :index 
+    erb :index
   end
 
   helpers do

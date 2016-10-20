@@ -1,5 +1,8 @@
 <a href="/logout">Logout</a> <a href="/">Home</a> <a href="/events/new">New Event</a>
 <br></br>
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
 <% @events.each {|event| %>
   <a href="/events/<%=event.id%>"><%=event.title%></a>
   <p><%=event.date%></p>

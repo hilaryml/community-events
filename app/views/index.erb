@@ -1,8 +1,9 @@
 <% @links.each {|key, value| %>
   <a href="<%=value%>"><%=key%></a>
 <% } %>
+<br></br>
 <% @events.each {|event| %>
-  <h3><%=event.title%><h3>
+  <a href="/events/<%=event.id%>"><%=event.title%></a>
   <p><%=event.date%><p>
   <br></br>
 <% } %>
