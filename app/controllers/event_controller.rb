@@ -46,7 +46,7 @@ class EventController < SessionController
         @user = current_user
         erb :"events/edit"
       else
-        flash[:notice] = "Users can only edit their own events."
+        flash[:message] = "Users can only edit their own events."
         redirect "/events"
       end
     end
