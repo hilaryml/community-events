@@ -4,6 +4,7 @@
 <% if flash.has?(:message) %>
   <%= flash[:message] %>
 <% end %>
+<br></br>
 <% @events.each {|event| %>
   <a href="/events/<%=event.id%>"><%=event.title%></a>
   <p><%=event.date%></p>

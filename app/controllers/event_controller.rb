@@ -46,7 +46,6 @@ class EventController < SessionController
         @user = current_user
         erb :"events/edit"
       else
-        flash[:message] = "Users can only edit their own events."
         redirect "/events"
       end
     end
@@ -68,7 +67,6 @@ class EventController < SessionController
     else
       @event = Event.find(params[:id])
       if @event.user != current_user
-        flash[:message] = "Users can only delete their own events."
         redirect "/events"
       else
         @event.delete
