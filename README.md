@@ -4,8 +4,7 @@ Community Events is a Sinatra app used for displaying upcoming events in the Ham
 
 ## Installation
 
-
-
+To use this app, just run `rake db:migrate` and then `shotgun` in your terminal.
 
 ## Contributing
 
