@@ -13,6 +13,7 @@ class UserController < SessionController
     if @user.save
       login(params[:username], params[:password])
     else
+      flash[:message] = "Please be sure to fill in all form fields."
       redirect "/signup"
     end
   end
