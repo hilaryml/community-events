@@ -14,6 +14,7 @@ class EventController < SessionController
     if @event.save
       redirect "/events/#{@event.id}"
     else
+      flash[:message] = "Be sure to fill in all form fields."
       redirect "/events/new"
     end
   end
