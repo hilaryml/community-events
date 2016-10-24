@@ -30,8 +30,13 @@ class EventController < SessionController
   end
 
   get "/events/:id" do
-      @event = Event.find(params[:id])
-      erb :"events/show"
+    if logged_in?
+      @links = {"Logout": "/logout", "Home": "/", "Your Events": "/events"}
+    else
+      @links = {"Login": "/login", "Signup": "/signup"}
+    end
+    @event = Event.find(params[:id])
+    erb :"events/show"
   end
 
   get "/events/:id/edit" do
