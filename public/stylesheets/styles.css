@@ -1,0 +1,44 @@
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.jumbotron {
+  background-image: url("/images/hamilton-jumbotron.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.wrapper {
+  width: 55%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, .85);
+  z-index: 0;
+  margin-top: 70px;
+  margin-bottom: 70%;
+  text-align: center;
+}
+
+.content {
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 60px;
+  overflow: auto;
+}
+
+.glyphicon.glyphicon-stats {
+  color: #4b4b4b;
+  font-size: 150px;
+}

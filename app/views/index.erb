@@ -1,9 +1,11 @@
-<% @links.each {|key, value| %>
-  <a href="<%=value%>"><%=key%></a>
-<% } %>
-<br></br>
-<% @events.sort{|a,b| a.date <=> b.date}.each {|event| %>
-  <a href="/events/<%=event.id%>"><%=event.title%></a>
-  <p><%=event.date%><p>
-  <br></br>
-<% } %>
+<div class="jumbotron">
+  <div class="wrapper">
+    <div class="content">
+      <br></br>
+      <h2><strong>Welcome to Community Events</strong></h2>
+      <h4>Hamilton's source for local entertainment.</h4><br></br>
+      <span class="glyphicon glyphicon-stats"></span><br></br>
+      <a href="/login">Sign In</a> or <a href="/signup">Sign Up</a> to continue.
+    </div>
+  </div>
+</div>

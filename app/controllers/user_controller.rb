@@ -37,4 +37,15 @@ class UserController < SessionController
     redirect "/login"
   end
 
+  get '/users/:slug' do
+    @user = User.find_by_slug(params[:slug])
+    if @user == current_user
+      @events = @user.events
+      erb :"users/show"
+    else
+      flash[:message] = "Users can only view their own profiles."
+      redirect "/events"
+    end
+  end
+
 end

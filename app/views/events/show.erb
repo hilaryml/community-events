@@ -1,8 +1,11 @@
-<% @links.each {|key, value| %>
-  <a href="<%=value%>"><%=key%></a>
-<% } %>
-<br></br>
-<h4><%=@event.title%></h4>
-Taking place on <p><%=@event.date%> at <%=@event.location%></p>
-<p><%=@event.description%></p>
-Contact for more details: <p><%=@event.contact%></p>
+<div class="jumbotron">
+  <div class="wrapper">
+    <div class="content">
+      <br></br>
+      <h4><strong><%=@event.title%></strong></h4>
+      Taking place on: <p><%=@event.date.strftime("%B %-d, %Y")%> at <%=@event.location%></p>
+      Event Description:<p><%=@event.description%></p>
+      Contact for more details: <p><%=@event.contact%></p>
+    </div>
+  </div>
+</div>

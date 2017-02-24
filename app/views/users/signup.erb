@@ -1,15 +1,22 @@
-<h4>Signup</h4>
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
-<form method="post" action="/signup">
-  <label>Username:</label>
-  <input type="text" name="username">
-  <label>Email:</label>
-  <input type="email" name="email">
-  <label>Password:</label>
-  <input type="password" name="password">
-  <input type="submit" value="Submit">
-</form>
-<br></br>
-Already have an account? <a href="/login">Click here to login.</a>
+<div class="jumbotron">
+  <div class="wrapper">
+    <div class="content">
+      <br></br>
+      <h4>Sign Up</h4>
+      <% if flash.has?(:message) %>
+        <%= flash[:message] %>
+      <% end %>
+      <form method="post" action="/signup">
+        <label>Username:</label>
+        <input type="text" name="username"><br></br>
+        <label>Email:</label>
+        <input type="email" name="email"><br></br>
+        <label>Password:</label>
+        <input type="password" name="password"><br></br>
+        <input type="submit" class="btn btn-default btn-sm" value="Sign Up">
+      </form>
+      <br></br>
+      Already have an account? <a href="/login">Click here to sign in.</a>
+    </div>
+  </div>
+</div>

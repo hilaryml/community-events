@@ -1,20 +1,25 @@
-<h3><%=@user.username.capitalize%>'s Events</h3>
-<a href="/logout">Logout</a> <a href="/">Home</a> <a href="/events/new">New Event</a>
-<br></br>
 <% if flash.has?(:message) %>
   <%= flash[:message] %>
 <% end %>
+
 <br></br>
-<% @events.sort{|a,b| a.date <=> b.date}.each {|event| %>
-  <a href="/events/<%=event.id%>"><%=event.title%></a>
-  <p><%=event.date%></p>
-  <form method="post" action="/events/<%=event.id%>">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    <input type="submit" value="Edit">
-  </form>
-  <form method="post" action="/events/<%=event.id%>/delete">
-    <input id="hidden" type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
-  </form>
-  <br></br>
-<% } %>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-4 well">
+      <div class="well">
+        <h4>Welcome, <%= @user.username.capitalize %></h4>
+      </div>
+      <div class="well">
+        <h4>Community Feed</h4>
+      </div>
+    </div>
+
+    <div class="col-sm-8">
+      <% @events.sort{|a,b| a.date <=> b.date}.each {|event| %>
+        <h2><a href="/events/<%=event.id%>"><%=event.title%></a></h2>
+        <p>Taking place on: <%=event.date%></p>
+        <br><br>
+      <% } %>
+    </div>
+  </div>
+</div>

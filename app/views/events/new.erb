@@ -1,20 +1,24 @@
-<h4>New Event</h4>
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
-<form method="post" action="/events">
-  <label>Title:</label>
-  <input type="text" name="title">
-  <label>Date:</label>
-  <input type="date" name="date">
-  <label>Location:</label>
-  <input type="text" name="location">
-  <br></br>
-  <label>Description:</label><br>
-  <textarea name="description" rows=6 cols=60></textarea>
-  <br></br>
-  <label>Contact Info:</label>
-  <input type="text" name="contact">
-  <br></br>
-  <input type="submit" value="Submit">
-</form>
+<div class="jumbotron">
+  <div class="wrapper">
+    <div class="content">
+      <br></br>
+      <h4><strong>NEW EVENT</strong></h4>
+      <% if flash.has?(:message) %>
+        <%= flash[:message] %>
+      <% end %>
+      <form method="post" action="/events">
+        <label>Title:</label>
+        <input type="text" name="title"><br />
+        <label>Date:</label>
+        <input type="date" name="date"><br />
+        <label>Location:</label>
+        <input type="text" name="location"><br />
+        <label>Description:</label><br>
+        <textarea name="description" rows=6 cols=60></textarea><br />
+        <label>Contact Info:</label>
+        <input type="text" name="contact"><br></br>
+        <input type="submit" class="btn btn-default btn-sm" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>

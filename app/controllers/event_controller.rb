@@ -24,17 +24,12 @@ class EventController < SessionController
       redirect "/login"
     else
       @user = current_user
-      @events = @user.events
+      @events = Event.all
       erb :"/events/index"
     end
   end
 
   get "/events/:id" do
-    if logged_in?
-      @links = {"Logout": "/logout", "Home": "/", "Your Events": "/events"}
-    else
-      @links = {"Login": "/login", "Signup": "/signup"}
-    end
     @event = Event.find(params[:id])
     erb :"events/show"
   end
@@ -59,6 +54,7 @@ class EventController < SessionController
     if @event.save
       redirect "/events/#{@event.id}"
     else
+      flash[:message] = "Be sure to fill in all form fields."
       redirect "/events/#{@event.id}/edit"
     end
   end
